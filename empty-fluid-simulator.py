@@ -9,6 +9,9 @@ DT = 1
 water_ref = CenteredGrid(Noise(), extrapolation.BOUNDARY, x=32, y=40, bounds=bounds)
 velocity_ref = StaggeredGrid(0, extrapolation.ZERO, x=32, y=40, bounds=bounds)
 #velocity_ref = StaggeredGrid(Noise(), extrapolation.ZERO, x=32, y=40, bounds=bounds) * 10
+
+water_ref = water_ref.with_values(math.maximum(water_ref.values, 0))
+
 vis.plot([water_ref, velocity_ref])
 
 water = water_ref
