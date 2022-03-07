@@ -29,4 +29,4 @@ for i in range(20):
   velocity = advect.semi_lagrangian(velocity, velocity, dt=DT) + gravity_force
   velocity, _ = fluid.make_incompressible(velocity)
 
-  scene.write({'water' : water, 'velocity' : velocity}, fames=i)
+  scene.write({'water' : water, 'velocity' : velocity}, frame=i)
